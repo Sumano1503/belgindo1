@@ -1,3 +1,12 @@
+<?php
+require_once $_SERVER['DOCUMENT_ROOT'] . "/backend_service/database.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/admin/services/functions.php";
+session_start();
+if (isset($_SESSION['username'])) {
+    insert_logout($pdo, $_SESSION['id']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -143,10 +152,10 @@
             <div class="card mb-3 mx-auto p-3 mt-5 mt-md-3" style="max-width: 540px; background-color:#D1BE7A; border-radius:10px;border:1px solid black; border-width:1px ;border-color:#4F4F4F;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
-                        <div class="pb-5"></div>
+                        <div class="row pb-2"></div>
                         <div class="row pl-3">
                             <div class="col">
-                                <img src="" class="card-img">
+                                <img src="Images/logo.png" class="card-img">
                             </div>
                         </div>
                     </div>
