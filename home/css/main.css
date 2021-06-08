@@ -1,0 +1,15 @@
+body{
+    background-color: #FAF0D7;
+}
+
+li{
+    padding-left: 2.5vw;
+    padding-right: 2.5vw;
+}
+
+@media only screen and (max-width: 1369px) {
+    li{
+        padding-left: 1.5vw;
+        padding-right: 1.5vw;
+    }
+  }
