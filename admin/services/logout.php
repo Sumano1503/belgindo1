@@ -4,5 +4,5 @@
     session_start();
     insert_logout($pdo, $_SESSION['id']);
     session_destroy();
-    header('Location: http://127.0.0.1/belgindo1/admin/');
+    header('Location: /belgindo1/admin/');
 ?>

@@ -34,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['id'] = $user['id_admin'];
         $id_admin = $user['id_admin'];
         $_SESSION['username'] = $user['username'];
-        $_SESSION['role'] = $user['role'];
         $status = "success";
     } else {
 

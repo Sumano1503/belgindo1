@@ -184,7 +184,7 @@ if (isset($_SESSION['username'])) {
 <script>
     var loginSucceed = false;
     var loginFail = false;
-    var redirecturl = "http://127.0.0.1/belgindo1/admin/";
+    var redirecturl = "/belgindo1/admin/";
 
     function login(username, password) {
         var jc = $.dialog({
@@ -212,6 +212,8 @@ if (isset($_SESSION['username'])) {
                 },
                 success: function (data) {
                     loginSucceed = true;
+                    data = JSON.parse(data);
+                    console.log(data);
                     redirecturl = data.redirect;
                     $.confirm({
                         title: 'Succcess!',
