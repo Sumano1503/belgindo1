@@ -28,7 +28,7 @@ if (isset($_SESSION['username'])) {
 <style>
     body {
         /* background: url("Images/Background.jpg") no-repeat center center fixed; */
-        background-color: #FDF7EB !important;
+        background-color: #F9F0D7 !important;
         overflow-x: hidden !important;
         background-size: 100%;
 
@@ -44,11 +44,11 @@ if (isset($_SESSION['username'])) {
     }
 
     #login:hover {
-        background-color: #4F4F4F !important;
-        color: #FDF7EB !important;
+        background-color: #B7A56C !important;
+        color: #F9F0D7 !important;
         border: 1px solid black !important;
         border-width: 1px !important;
-        border-color: #FDF7EB !important;
+        border-color: #F9F0D7 !important;
         border-radius: 5px !important;
     }
 
@@ -81,7 +81,7 @@ if (isset($_SESSION['username'])) {
             -o-background-size: cover !important;
             background-size: cover !important;
             overflow-x: hidden !important;
-            background-color: #FDF7EB;
+            background-color: #F9F0D7;
         }
     }
 
@@ -130,26 +130,26 @@ if (isset($_SESSION['username'])) {
 
         1%,
         100% {
-            border-color: #4F4F4F !important;
+            border-color: #B7A56C !important;
         }
 
         50% {
-            border-color: #4F4F4F !important;
+            border-color: #B7A56C !important;
         }
     }
 
     .jconfirm .jconfirm-box.jconfirm-type-green {
-        border-color: #4F4F4F !important;
+        border-color: #B7A56C !important;
     }
 
     .jconfirm .jconfirm-box .jconfirm-buttons button.btn-green {
-        background-color: #4F4F4F !important;
+        background-color: #B7A56C !important;
     }
 </style>
 <body>
     <div style="min-height: 100vh;">
         <div class="p-4 p-md-1" style="padding-top: 15%!important;">
-            <div class="card mb-3 mx-auto p-3 mt-5 mt-md-3" style="max-width: 540px; background-color:#D1BE7A; border-radius:10px;border:1px solid black; border-width:1px ;border-color:#4F4F4F;">
+            <div class="card mb-3 mx-auto p-3 mt-5 mt-md-3" style="max-width: 540px; background-color:#D1BE7A; border-radius:10px;border:1px solid black; border-width:1px ;border-color:#B7A56C;">
                 <div class="row no-gutters">
                     <div class="col-md-4">
                         <div class="row pb-2"></div>
@@ -161,7 +161,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h5 class="card-title" style="color:#4F4F4F">Login</h5>
+                            <h5 class="card-title" style="color:white">Login</h5>
                             <div class="card-text">
                                 <div class="input-group mb-3">
                                     <input type="text" class="form-control" placeholder="Username" name="username" id="username" required="">
@@ -171,7 +171,7 @@ if (isset($_SESSION['username'])) {
                                     <input type="password" class="form-control" placeholder="Password" name="password" id="password" required="">
                                 </div>
 
-                                <button type="submit" class="btn float-right" name="login" id="login" style="background-color:#FDF7EB; color:#4F4F4F;; border:1px solid black; border-width:1px ;border-color:#4F4F4F;; border-radius:5px;">Sign In</button>
+                                <button type="submit" class="btn float-right" name="login" id="login" style="background-color:#F9F0D7; color:#B7A56C; border:1px solid black; border-width:1px ;border-color:#B7A56C;; border-radius:5px;">Sign In</button>
 
                             </div>
                         </div>
