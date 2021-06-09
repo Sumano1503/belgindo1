@@ -1,6 +1,6 @@
 <?php 
 require_once $_SERVER['DOCUMENT_ROOT'] . "/belgindo1/backend_service/database.php";
-header("Content-Type: application/json");
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
