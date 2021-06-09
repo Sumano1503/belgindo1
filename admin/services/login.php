@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $result= [
         "status" => 1,
         "error" => " ",
-        'redirect' => "/admin/login/index.php"
+        'redirect' => "/belgindo1/admin/login/index.php"
     ];
 
     if ($username == '' || $password == '') {
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $row_count = $stmt->rowCount();
 
     if ($row_count >= 1) {
-        $result['redirect'] = '/admin/login/index.php';
+        $result['redirect'] = '/belgindo1/admin/login/index.php';
         $user = $stmt->fetch();
         session_start();
         $_SESSION['id'] = $user['id_admin'];
