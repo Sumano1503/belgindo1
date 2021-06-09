@@ -1,9 +1,9 @@
 <?php 
-$host = "ftp.haftcorpindo.com";
-$db = "hafk8743_belgindo";
-$user = "hafk8743";
-$pass = "XkUKw1P82mgx59";
-$charset = "utf8mb4";
+$host="127.0.0.1";//IP MY SQL
+$db="belgindo";
+$user="root";
+$pass="";
+$charset="utf8mb4";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 
