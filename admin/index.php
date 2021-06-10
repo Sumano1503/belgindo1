@@ -6,7 +6,7 @@ if (isset($_SESSION['username'])) {
     insert_logout($pdo, $_SESSION['id']);
 }
 ?>
-
+<!-- wong internetnya bau -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
