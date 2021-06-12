@@ -109,8 +109,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-6 ps-0 ps-lg-auto pe-0 order-1 order-lg-2 ms-auto">
-                    <div class="navigation-menu">
+                <div class="col-6 col-lg-6 ps-0 ps-lg-auto pe-0 order-1 order-lg-2 ms-auto position-relative">
+                    <div class="navigation-menu w-100">
                         <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none" style="background-color: #D0BE7C;">
                             <div class="container-fluid justify-content-end">
                                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -239,13 +239,13 @@
                                 success: function (response) {
                                     $.confirm({
                                         title: 'Success!',
-                                        content: 'Your data has been updated',
-                                        type: 'green',
+                                        content: 'Your message has been sent',
+                                        type: 'belgindo',
                                         typeAnimated: true,
                                         buttons: {
                                             OK: {
                                                 text: 'OK',
-                                                btnClass: 'btn-green',
+                                                btnClass: 'btn-belgindo text-white',
                                                 action: function () {
                                                     $('#contact-us-form')[0].reset();
                                                 }
