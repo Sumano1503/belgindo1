@@ -24,12 +24,13 @@ if (isset($_SESSION['username'])) {
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Belgindo | Admin Page</title>
     <link rel="icon" type="image/png" href="../../Images/icons/logoicon.png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.css"/>
 
     <!-- ini buat crop gambar -->
     <link rel="stylesheet" href="/assets/CSS/normalize.css">
     <link rel="stylesheet" href="/assets/CSS/component.css">
     <link rel="stylesheet" href="/assets/CSS/croppie.css">
-    <link rel="stylesheet" href="/assets/CSS/jquery-ui.css">
+    <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/black-tie/jquery-ui.css">
     
     <!-- ini buat crop gambar -->
   
@@ -42,7 +43,12 @@ if (isset($_SESSION['username'])) {
     <script src="/assets/Script/jquery.custom-file-input.js"></script>
     <script src="/assets/Script/croppie.js"></script>
     <script src="/assets/Script/exif.js"></script>
-    <script src="/assets/Script/jquery-ui.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/jquery-ui.min.js"></script>
+
+    <!-- croppie -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/croppie/2.6.5/croppie.min.js"> </script>
+
+
 </head>
 <style>
 
@@ -343,11 +349,11 @@ if (isset($_SESSION['username'])) {
                     <div class="container">
                         <div class="row pt-4">
                             <div class="text-right">
-                                <button id="add-blog-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-blog-modal"><i class="lnr lnr-plus-circle"></i>Add Blog</button>
+                                <button id="add-blog-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-blog-modal"><i class="lnr lnr-plus-circle"></i>Add Product</button>
                             </div>
                         </div>
                         <div class="row pt-4 ">
-                            <div class="col-12" id="blog">
+                            <div class="col-12" id="list-product">
                                 
                             </div>
                         </div>
@@ -362,109 +368,48 @@ if (isset($_SESSION['username'])) {
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#D1BE7A; color:white;">
-                    <h5 class="modal-title">Add Blog</h5>
+                    <h5 class="modal-title">Add Product</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="color:black;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" enctype="multipart/form-data" id="add-blog-form">
+                <form method="post" enctype="multipart/form-data" id="add-product-form">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="title">Category : </label>
                             <select class="form-control border-dark" id="kategori" name="kategori" style="background-color: transparent !important;color:black;">
                                 <option hidden value="-1">Category</option>
-                                
+                                <option value="1">Matte Black</option>
+                                <option value="2">Foil</option>
+                                <option value="3">Gold & Silver</option>
+                                <option value="4">Highloss</option>
+                                <option value="5">Matte White</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="inputGambar">Image Cover (max. 10MB)</label>
+                            <label for="inputGambar">Image</label>
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="inputGroupFileAddon01">Upload File</span>
                                 </div>
                                 <div class="custom-file box">
-                                    <input type="file" name="gambar0" id="gambar0" onchange="readImageCover(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
-                                    <label class="custom-file-label" for="gambar0">Choose File</label>
+                                    <input type="file" name="gambarproduct" id="gambarproduct" onchange="readImage(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
+                                    <label class="custom-file-label" for="gambarproduct">Choose File</label>
                                 </div>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="judul">Title : </label>
-                            <input type="text" id="judul" name="judul" class="form-control" placeholder="Input Title">
+                            <label for="nama">Product Name : </label>
+                            <input type="text" id="nama" name="nama" class="form-control" placeholder="Input Title">
                         </div>
                         <div class="form-group">
-                            <label for="subjudul">Sub Title : </label>
-                            <input type="text" id="subjudul" name="subjudul" class="form-control" placeholder="Input Sub Title">
-                        </div>
-                        <div class="form-group">
-                            <label for="penulis">Writer : </label>
-                            <input type="text" id="penulis" name="penulis" class="form-control" placeholder="Input Writer's Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="tanggal">Date : </label>
-                            <input type="date" id="tanggal" name="tanggal" class="form-control" placeholder="Date">
-                        </div>
-                        <div class="form-group">
-                            <label for="inputGambar">Upper Image (max. 10MB)</label>
-                            <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload File</span>
-                                </div>
-                                <div class="custom-file box">
-                                    <input type="file" name="gambar1" id="gambar1" onchange="readImageUpper(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
-                                    <label class="custom-file-label" for="gambar1">Choose File</label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="deskripsi1">Text 1 : </label>
-                            <textarea id="deskripsi1" name="deskripsi1" class="form-control" placeholder="deskripsi1" rows="4" required="required" data-error="Its Empty!"></textarea>
-                        </div>
-                        <div class="form-group">
-                                <label for="inputGambar">Image Center (max. 10MB)</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload File</span>
-                                    </div>
-                                    <div class="custom-file box">
-                                        <input type="file" name="gambar2" id="gambar2" onchange="readImageCenter(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
-                                        <label class="custom-file-label" for="gambar2">Choose File</label>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="form-group">
-                            <label for="deskripsi2">Text 2 : </label>
-                            <textarea id="deskripsi2" name="deskripsi2" class="form-control" placeholder="deskripsi2" rows="4" required="required" data-error="Its Empty!"></textarea>
-                        </div>
-                        <div class="form-group">
-                                <label for="inputGambar">Lower Image(max. 10MB)</label>
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="inputGroupFileAddon01">Upload File</span>
-                                    </div>
-                                    <div class="custom-file box">
-                                        <input type="file" name="gambar3" id="gambar3" onchange="readImageLower(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
-                                        <label class="custom-file-label" for="gambar3">Choose File</label>
-                                    </div>
-                                </div>
-                            </div>
-                        <div class="form-group">
-                            <label for="deskripsi3">Text 3 : </label>
-                            <textarea id="deskripsi3" name="deskripsi3" class="form-control" placeholder="deskripsi3" rows="4" required="required" data-error="Its Empty!"></textarea>
-                        </div>
-                        <div class="form-group">
-                            <label for="tagsdiv">Tags : </label>
-                            <div id="tagsdiv" class="row">
-                                
-                            </div>
-                            
-                            <button type="button" class="btn btn-primary rounded-pill d-block" id="add-tags">Add Tags</button>
-
+                            <label for="deskripsi">Description : </label>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" placeholder="deskripsi" rows="4" required="required" data-error="Its Empty!"></textarea>
                         </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" id="submit" name="submit" class="btn btn-success"><i class="lnr lnr-plus-circle"></i> Submit</button>
+                        <button type="button" id="submit-add-button" name="submit" class="btn btn-success"><i class="lnr lnr-plus-circle"></i> Submit</button>
                     </div>
                 </form>
             </div>
@@ -472,12 +417,6 @@ if (isset($_SESSION['username'])) {
     </div>
     
     <!-- MODAL EDIT BLOG -->
-    
-   
-
-
-    
-
     <!-- ini buat crop gambar-->
     <div id="cropModal">
         <div class="row align-items-center justify-content-center">
@@ -494,9 +433,150 @@ if (isset($_SESSION['username'])) {
         <img class="modal-content2" id="img01">
         <div id="caption2"></div>
     </div>
-    
-   
 
+    <script>
+        var uploadCrop;
+        var productblobdata = null;
+
+        function imageExists(image_url) {
+            var http = new XMLHttpRequest();
+            http.open('HEAD', image_url, false);
+            http.send();
+            return http.status != 404;
+        }
+
+        function readImage(input) {
+            $(input).next('.custom-file-label').html("Choose File");
+            var fileName = $(input).val();
+            fileName = fileName.substring(12);
+            if (input.files && input.files[0]) {
+                var iddb = $(input).data('id');
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.crop').attr('src', e.target.result);
+                    uploadCrop = $('.crop').croppie({
+                        enableExif: true,
+                        viewport: {
+                            width: 300,
+                            height: 420,
+                            type: 'square'
+                        },
+                        boundary: {
+                            width: 300,
+                            height: 420
+                        },
+                        enforceBoundary: true,
+                        mouseWheelZoom: true,
+                        showZoomer: false,
+                        enableZoom: true
+                    });
+                    $('#cropModal').dialog({
+                        buttons: [{
+                            text: "Crop",
+                            click: function() {
+                                uploadCrop.croppie('result', {
+                                    type: 'blob',
+                                    size: 'viewport',
+                                    format: 'png',
+                                    quality: '1',
+                                    circle: 'false'
+                                }).then(function(blob) {
+                                    const url = URL.createObjectURL(blob);
+                                    productblobdata = blob;
+                                    $(input).next('.custom-file-label').html(fileName);
+                                });
+                                $(this).dialog("close");
+                            },
+                            class: "btn btn-info"
+                        }],
+                        position: {
+                            my: "center",
+                            at: "center",
+                            of: "body"
+                        },
+                        minHeight: 600,
+                        minWidth: 600
+                    });
+                    $('.ui-dialog').css('z-index', '1051');
+                    $(".ui-dialog-titlebar-close").css('border', 'none');
+                    $(".ui-dialog-titlebar-close").append('<i class="fas fa-times"></i>');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+            input.value = null;
+        }
+
+        // AJAX
+        $(document).on('click', '#submit-add-button', function(e) {
+            e.preventDefault();
+            $.confirm({
+                title: 'Are you sure?',
+                content: 'Your data will be changed',
+                buttons: {
+                    confirm: {
+                        text: 'Confirm',
+                        btnClass: 'btn-success',
+                        keys: ['enter', 'shift'],
+                        action: function() {
+                            var Formhtml = document.getElementById("add-product-form");
+                            var Formobj = new FormData(Formhtml);
+                            if (!productblobdata) {
+                                $.alert({
+                                    title: 'Image Empty!',
+                                    content: 'Please make sure all the images are selected!',
+                                });
+                                return;
+                            }
+                            Formobj.append("image", productblobdata, "image");
+                            $.ajax({
+                                type: "POST",
+                                url: "services/add_product.php",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                data: Formobj,
+                                success: function(data) {
+                                    $("#list-product").html(data);
+                                    addModal.hide();
+                                    $('#add-product-form')[0].reset();
+                                    productblobdata = null;
+                                    $('#gambarproduct').next('.custom-file-label').html("Choose File");
+                                },
+                                error: function(xhr) {
+                                    addModal.hide();
+                                    $.confirm({
+                                        title: 'Encountered an error!',
+                                        content: 'Something went wrong while changing the data </br> Error: "' + xhr.responseJSON.msg + '"',
+                                        type: 'red',
+                                        typeAnimated: true,
+                                        buttons: {
+                                            tryAgain: {
+                                                text: 'Try again',
+                                                btnClass: 'btn-red',
+                                                action: function() {
+                                                    $('#add-product-form')[0].reset();
+                                                }
+                                            },
+                                            close: function() {
+                                                $('#add-product-form')[0].reset();
+                                            }
+                                        }
+                                    });
+                                    productblobdata = null;
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: 'Cancel',
+                        btnClass: 'btn-secondary',
+                        keys: ['enter', 'shift'],
+                        action: function() {}
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 
