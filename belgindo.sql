@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2021 at 08:02 AM
+-- Generation Time: Jun 12, 2021 at 06:47 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -60,7 +60,7 @@ CREATE TABLE `login_activity` (
 --
 
 INSERT INTO `login_activity` (`id`, `id_admin`, `detail_username`, `start_date`, `end_date`, `status`) VALUES
-(1, 1, 'admin', '2021-06-09 10:22:19', '2021-06-09 16:18:35', 'success'),
+(1, 1, 'admin', '2021-06-09 10:22:19', '2021-06-12 23:47:30', 'success'),
 (2, 1, 'admin', '2021-06-09 10:22:19', '2021-06-09 10:27:19', 'success'),
 (3, 1, 'admin', '2021-06-09 10:23:28', '2021-06-09 10:28:28', 'success'),
 (4, 1, 'admin', '2021-06-09 10:26:10', '2021-06-09 10:31:10', 'success'),
@@ -78,7 +78,24 @@ INSERT INTO `login_activity` (`id`, `id_admin`, `detail_username`, `start_date`,
 (16, 1, 'admin', '2021-06-09 15:42:35', '2021-06-09 15:47:35', 'success'),
 (17, 1, 'admin', '2021-06-09 15:43:57', '2021-06-09 15:48:57', 'success'),
 (18, 1, 'admin', '2021-06-09 15:43:57', '2021-06-09 15:48:57', 'success'),
-(19, 1, 'admin', '2021-06-09 16:07:26', '2021-06-09 16:12:26', 'success');
+(19, 1, 'admin', '2021-06-09 16:07:26', '2021-06-09 16:12:26', 'success'),
+(20, 1, 'admin', '2021-06-12 23:37:01', '2021-06-12 23:42:01', 'success'),
+(21, 1, 'admin', '2021-06-12 23:43:45', '2021-06-12 23:48:45', 'success');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mail`
+--
+
+CREATE TABLE `mail` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `phone` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -97,6 +114,12 @@ ALTER TABLE `login_activity`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mail`
+--
+ALTER TABLE `mail`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -110,7 +133,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `login_activity`
 --
 ALTER TABLE `login_activity`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `mail`
+--
+ALTER TABLE `mail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

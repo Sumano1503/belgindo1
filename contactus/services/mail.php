@@ -3,6 +3,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 require_once "../../vendor/autoload.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/belgindo1/backend_service/database.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/belgindo1/admin/services/functions.php";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $mail = new PHPMailer(true);
@@ -16,8 +18,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     //Set this to true if SMTP host requires authentication to send email
     $mail->SMTPAuth = true;
     //Provide username and password     
-    $mail->Username = "";
-    $mail->Password = "";
+    $mail->Username = "michaelwong306@gmail.com";
+    $mail->Password = "hnbmlesobfdcwzcy";
     //If SMTP requires TLS encryption then set it
     $mail->SMTPSecure = "tls";
     //Set TCP port to connect to
@@ -40,8 +42,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
     try {
         $mail->send();
+        $query = "INSERT INTO `mail`(`id`, `name`, `phone`, `email`, `message`, `status`) VALUES (DEFAULT,?,?,?,?,?)";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$nameFrom, $phoneFrom, $mailFrom, $messageFrom, 1]);
         echo "Message has been sent successfully";
     } catch (Exception $e) {
-        echo "Mailer Error: " . $mail->ErrorInfo;
+        echo json_response(500, "Message not sent");
     }
 }

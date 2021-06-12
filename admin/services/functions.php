@@ -6,8 +6,6 @@ function insert_logout($pdo, $id){
     $stmt->execute([$id]);
 }
 
-
-
 function json_response($code = 200, $message = null)
 {
     header_remove();
@@ -27,8 +25,37 @@ function json_response($code = 200, $message = null)
     ));
 }
 
-
-
-
-
-?>
+function show_mail($pdo){
+    $query = "SELECT * FROM `mail`";
+    $stmt = $pdo->query($query);
+    $output = '
+    <table class="rwd-table table table-borderless table-hover">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+    ';
+    $number = 1;
+    while($row = $stmt->fetch()){
+        $output .= '
+            <tr>
+                <td scope="row">' . $number++ . '</td>
+                <td>' . $row['name'] . '</td>
+                <td>' . $row['phone'] . '</td>
+                <td>' . $row['email'] . '</td>
+                <td>' . $row['message'] . '</td>
+            </tr>
+        ';
+    }
+    $output .= '
+        </tbody>
+    </table>
+    ';
+    echo $output;
+}
