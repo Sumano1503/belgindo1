@@ -95,7 +95,16 @@
             font-family: "CaviarDreams";
         }
 
-        /* @media only screen and (max-width: 1400px) {
+        .cards{
+            width: auto;
+            padding-top: 10px;
+        }
+
+        .concard{
+            padding-bottom: 300px;
+        }
+
+        @media only screen and (max-width: 1400px) {
             .navigation-menu{
                 position: unset;
                 width: 100%;
@@ -104,23 +113,24 @@
             }
         }
 
-        @media only screen and (max-width: 1305px) {
-            .title-page{ 
-                font-size: 80px;
+        @media (min-width: 600px) and (max-width: 992px) {
+            .cards{
+            width: auto;
+            padding-bottom: 10px;
             }
+
+            .conourwork{
+            padding-bottom: 60px;
+            }
+
+            .concard{
+            margin-top: 30px;
+            padding-bottom: 300px;
+            }
+
         }
 
-        @media only screen and (max-width: 1177px) {
-            .title-page{ 
-                font-size: 70px;
-            }
-        }
 
-        @media only screen and (max-width: 1047px) {
-            .title-page{ 
-                font-size: 60px;
-            }
-        } */
     </style>
 </head>
 
@@ -128,8 +138,42 @@
     <div class="container-fluid p-0 p-sm-auto" id="main">
         <form action="#" method="POST" id="contact-us-form">
             <div class="row w-100 m-0">
-                <div class="col-6 col-lg-6 order-3 order-lg-1" id="bkiri">
-                    <div class="container pt-4 pt-lg-5">
+                <div class="col-12 d-block d-lg-none p-0 m-0">
+                    <div class="navigation-menu w-100" style="font-family: CaviarDreams;">
+                        <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none" style="background-color: #D0BE7C;">
+                            <div class="container-fluid justify-content-end">
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="collapse navbar-collapse " style="width: 100%;" id="navbarNav">
+                                    <ul class="navbar-nav">
+                                        <li class="nav-item my-4">
+                                            <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+                                        </li>
+                                        <li class="nav-item my-4">
+                                            <a class="nav-link" href="#" style="color: white;">About Us</a>
+                                        </li>
+                                        <li class="nav-item my-4">
+                                            <a class="nav-link" href="#" style="color: white;">Gallery</a>
+                                        </li>
+                                        <li class="nav-item my-4">
+                                            <a class="nav-link" href="#" style="color: white;">Contact Us</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        <div class="d-none d-lg-flex flex-row flex-nowrap align-items-center py-4 pe-3 justify-content-center w-100">
+                            <div class="text-white mx-3 mx-sm-4 mx-md-4 mx-xxl-5">Home</div>
+                            <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">About Us</div>
+                            <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Gallery</div>
+                            <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Contact Us</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 order-1" id="bkiri">
+                    <div class="conourwork container pt-4 pt-lg-5">
                         <h1 class="ourwork mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">OURWORK</h1>
                         <div class="text-atas mb-1">
                             All
@@ -151,158 +195,147 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6 col-lg-6 ps-0 ps-lg-auto pe-0 order-1 order-lg-2 ms-auto" id="bkanan">
-                    <!-- <div class="row"> -->
-                        <div class="col-12 position-relative">
-                            <div class="navigation-menu w-100">
-                                <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none"
-                                    style="background-color: #D0BE7C;">
-                                    <div class="container-fluid justify-content-end">
-                                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                                            aria-label="Toggle navigation">
-                                            <span class="navbar-toggler-icon"></span>
-                                        </button>
-                                        <div class="collapse navbar-collapse " style="width: 100%;" id="navbarNav">
-                                            <ul class="navbar-nav">
-                                                <li class="nav-item my-4">
-                                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                                </li>
-                                                <li class="nav-item my-4">
-                                                    <a class="nav-link" href="#">About Us</a>
-                                                </li>
-                                                <li class="nav-item my-4">
-                                                    <a class="nav-link" href="#">Gallery</a>
-                                                </li>
-                                                <li class="nav-item my-4">
-                                                    <a class="nav-link" href="#">Contact Us</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+                <div class="col-12 col-lg-6 ps-0 ps-lg-auto pe-0 order-2  ms-auto" id="bkanan">
+                    <div class="col-12 position-relative">
+                        <div class="navigation-menu w-100 d-none d-lg-block" style="font-family: CaviarDreams;">
+                            <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none" 
+                            style="background-color: #D0BE7C;">
+                                <div class="container-fluid justify-content-end">
+                                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                        aria-label="Toggle navigation">
+                                        <span class="navbar-toggler-icon"></span>
+                                    </button>
+                                    <div class="collapse navbar-collapse " style="width: 100%;" id="navbarNav">
+                                        <ul class="navbar-nav">
+                                            <li class="nav-item my-4">
+                                                <a class="nav-link active" aria-current="page" href="#" style="color: white;">Home</a>
+                                            </li>
+                                            <li class="nav-item my-4">
+                                                <a class="nav-link" href="#" style="color: white;">About Us</a>
+                                            </li>
+                                            <li class="nav-item my-4">
+                                                <a class="nav-link" href="#" style="color: white;">Gallery</a>
+                                            </li>
+                                            <li class="nav-item my-4">
+                                                <a class="nav-link" href="#" style="color: white;">Contact Us</a>
+                                            </li>
+                                        </ul>
                                     </div>
-                                </nav>
-                                <div
-                                    class="d-none d-lg-flex flex-row flex-nowrap align-items-center py-4 pe-3 justify-content-center w-100">
-                                    <div class="text-white mx-3 mx-sm-4 mx-md-4 mx-xxl-5">Home</div>
-                                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">About Us</div>
-                                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Gallery</div>
-                                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Contact Us</div>
                                 </div>
+                            </nav>
+                            <div
+                                class="d-none d-lg-flex flex-row flex-nowrap align-items-center py-4 pe-3 justify-content-center w-100">
+                                <div class="text-white mx-3 mx-sm-4 mx-md-4 mx-xxl-5">Home</div>
+                                <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">About Us</div>
+                                <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Gallery</div>
+                                <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Contact Us</div>
                             </div>
                         </div>
-                        <div class="col-12">
-                            <div class="container pt-4 row" style="padding-bottom: 300px;">
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                    </div>
+                    <div class="col-12">
+                        <div class="concard container pt-4 row">
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
+                                            <p class="card-text-atas">Silver Satu 1</p>
                                             <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
+                                            <p class="card-text-atas">Silver Satu 2</p>
                                             <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
+                                            <p class="card-text-atas">Silver Satu 3</p>
                                             <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
-                                    <div class="card border-0">
-                                        <img src="logo.JPG" class="card-img-top">
-                                        <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
+                                            <p class="card-text-atas">Silver Satu 4</p>
                                             <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
+                                            <p class="card-text-atas">Silver Satu 5</p>
+                                            <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-4" style="width: 14rem; padding-top: 10px;">
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
                                     <div class="card border-0">
                                         <img src="logo.JPG" class="card-img-top">
                                         <div class="cbody card-body">
-                                            <p class="card-text-atas">Silver Satu</p>
-                                            <p class="card-text-bawah">Gold & Silver</p>
+                                            <p class="card-text-atas">Silver Satu 6</p>
+                                            <p class="card-text-bawah">Gold & Silver </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
+                                    <div class="card border-0">
+                                        <img src="logo.JPG" class="card-img-top">
+                                        <div class="cbody card-body">
+                                            <p class="card-text-atas">Silver Satu 7</p>
+                                            <p class="card-text-bawah">Gold & Silver </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
+                                    <div class="card border-0">
+                                        <img src="logo.JPG" class="card-img-top">
+                                        <div class="cbody card-body">
+                                            <p class="card-text-atas">Silver Satu 8</p>
+                                            <p class="card-text-bawah">Gold & Silver </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6 col-xl-4">
+                                <div class="cards">
+                                    <div class="card border-0">
+                                        <img src="logo.JPG" class="card-img-top">
+                                        <div class="cbody card-body">
+                                            <p class="card-text-atas">Silver Satu 9</p>
+                                            <p class="card-text-bawah">Gold & Silver </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    <!-- </div> -->
+                    </div>
                 </div>
             </div>
         </form>
