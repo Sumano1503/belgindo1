@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 12, 2021 at 06:47 PM
+-- Generation Time: Jun 14, 2021 at 10:06 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -60,7 +60,7 @@ CREATE TABLE `login_activity` (
 --
 
 INSERT INTO `login_activity` (`id`, `id_admin`, `detail_username`, `start_date`, `end_date`, `status`) VALUES
-(1, 1, 'admin', '2021-06-09 10:22:19', '2021-06-12 23:47:30', 'success'),
+(1, 1, 'admin', '2021-06-09 10:22:19', '2021-06-12 23:48:29', 'success'),
 (2, 1, 'admin', '2021-06-09 10:22:19', '2021-06-09 10:27:19', 'success'),
 (3, 1, 'admin', '2021-06-09 10:23:28', '2021-06-09 10:28:28', 'success'),
 (4, 1, 'admin', '2021-06-09 10:26:10', '2021-06-09 10:31:10', 'success'),
@@ -97,6 +97,28 @@ CREATE TABLE `mail` (
   `status` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produk_belgindo`
+--
+
+CREATE TABLE `produk_belgindo` (
+  `id` int(11) NOT NULL,
+  `kategori_produk` int(11) NOT NULL,
+  `nama_produk` varchar(100) NOT NULL,
+  `foto_produk` varchar(100) NOT NULL,
+  `deskripsi_produk` text NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `produk_belgindo`
+--
+
+INSERT INTO `produk_belgindo` (`id`, `kategori_produk`, `nama_produk`, `foto_produk`, `deskripsi_produk`, `status`) VALUES
+(1, 1, 'Kang Sastra', '60c48b494bb1a.image', 'boss', 1);
+
 --
 -- Indexes for dumped tables
 --
@@ -120,6 +142,12 @@ ALTER TABLE `mail`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `produk_belgindo`
+--
+ALTER TABLE `produk_belgindo`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -139,6 +167,12 @@ ALTER TABLE `login_activity`
 -- AUTO_INCREMENT for table `mail`
 --
 ALTER TABLE `mail`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `produk_belgindo`
+--
+ALTER TABLE `produk_belgindo`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
