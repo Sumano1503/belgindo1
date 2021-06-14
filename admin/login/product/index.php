@@ -349,12 +349,14 @@ if (isset($_SESSION['username'])) {
                     <div class="container">
                         <div class="row pt-4">
                             <div class="text-right">
-                                <button id="add-blog-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-blog-modal"><i class="lnr lnr-plus-circle"></i>Add Product</button>
+                                <button id="add-blog-btn" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-product-modal"><i class="lnr lnr-plus-circle"></i>Add Product</button>
                             </div>
                         </div>
                         <div class="row pt-4 ">
                             <div class="col-12" id="list-product">
-                                
+                                <?php
+                                    echo show_product($pdo);
+                                ?>
                             </div>
                         </div>
                     </div>
@@ -363,8 +365,61 @@ if (isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <!-- MODAL TAMBAH BLOG -->
-    <div class="modal fade" id="add-blog-modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- MODAL TAMBAH PRODUCT -->
+    <div class="modal fade" id="add-product-modal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="background-color:#D1BE7A; color:white;">
+                    <h5 class="modal-title">Add Product</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="color:black;">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="post" enctype="multipart/form-data" id="add-product-form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="title">Category : </label>
+                            <select class="form-control border-dark" id="kategori" name="kategori" style="background-color: transparent !important;color:black;">
+                                <option hidden value="-1">Category</option>
+                                <option value="1">Matte Black</option>
+                                <option value="2">Foil</option>
+                                <option value="3">Gold & Silver</option>
+                                <option value="4">Highloss</option>
+                                <option value="5">Matte White</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputGambar">Image</label>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupFileAddon01">Upload File</span>
+                                </div>
+                                <div class="custom-file box">
+                                    <input type="file" name="gambarproduct" id="gambarproduct" onchange="readImage(this);" class="custom-file-input" accept="image/x-png,image/gif,image/jpeg" />
+                                    <label class="custom-file-label" for="gambarproduct">Choose File</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Product Name : </label>
+                            <input type="text" id="nama" name="nama" class="form-control" placeholder="Input Title">
+                        </div>
+                        <div class="form-group">
+                            <label for="deskripsi">Description : </label>
+                            <textarea id="deskripsi" name="deskripsi" class="form-control" placeholder="deskripsi" rows="4" required="required" data-error="Its Empty!"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <button type="button" id="submit-add-button" name="submit" class="btn btn-success"><i class="lnr lnr-plus-circle"></i> Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL EDIT PRODUCT -->
+    <div class="modal fade" id="edit-product-modal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#D1BE7A; color:white;">
@@ -575,6 +630,16 @@ if (isset($_SESSION['username'])) {
                     }
                 }
             });
+        });
+
+        $(document).on("click", "[id='preview-image']", function() {
+            var imgsrc = $(this).data('src');
+            $('#modalImage').css('display', 'block');
+            $('#img01').attr('src', '/belgindo1/ourwork/product/' + imgsrc);
+        });
+
+        $(document).on('click', '.close2', function() {
+            $('#modalImage').css('display', 'none');
         });
     </script>
 </body>

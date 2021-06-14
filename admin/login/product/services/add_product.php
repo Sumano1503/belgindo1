@@ -1,5 +1,6 @@
 <?php
 require_once $_SERVER['DOCUMENT_ROOT'] . "/belgindo1/backend_service/database.php";
+require_once $_SERVER['DOCUMENT_ROOT'] . "/belgindo1/admin/services/functions.php";
 function uploadProduct()
 {
     global $error_check;
@@ -39,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"]=="POST"){
     $query="INSERT INTO `produk_belgindo`(`id`, `kategori_produk`, `nama_produk`, `foto_produk`, `deskripsi_produk`, `status`) VALUES (default,?,?,?,?,1)";
     $stmt=$pdo->prepare($query);
     $stmt->execute([$kategori,$nama,$gambarproduct,$deskripsi]);
-    echo "Berhasil";
+    echo show_product($pdo);
 }
 
 
