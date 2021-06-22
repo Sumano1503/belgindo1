@@ -1,3 +1,130 @@
 body{
     background-color: #FAF0D7;
 }
+body{
+            background-color: #FAF0D7;
+        }
+        footer{
+            background-color: #38352C;
+            min-height: 50vh;
+        }
+        .send-btn, .btn-belgindo{
+            background-color: #D0BE7C;
+        }
+        .send-btn img{
+            height: 30px;
+            width: 30px;
+        }
+        .navigation-menu{
+            position: absolute;
+            right: 0;
+            top: 0;
+            background-color: #D0BE7C;
+            width: max-content;
+        }
+        .title-page{
+            font-family: "LocalBrewerySans"; 
+            font-size: 90px;
+        }
+        .footer-title{
+            font-family: "LocalBrewerySans"; 
+        }
+        .footer-text{
+            font-family: "Poppins-ExtraLight";
+            font-size: 12px;
+        }
+        .footer-copyright{
+            font-family: "CaviarDreams";
+        }
+
+        .belgindo-label{
+            font-family: "Poppins-ExtraLight";
+            font-size: 15px;
+        }
+
+        .about-label{
+            font-family: "Poppins-ExtraLight";
+            font-size: 50px;
+        }
+
+        @media only screen and (max-width: 1400px) {
+            .navigation-menu{
+                position: unset;
+                width: 100%;
+                right: unset;
+                top: unset;
+            }
+        }
+
+        @media only screen and (max-width: 1305px) {
+            .title-page{ 
+                font-size: 80px;
+            }
+        }
+
+        @media only screen and (max-width: 1177px) {
+            .title-page{ 
+                font-size: 70px;
+            }
+        }
+
+        @media only screen and (max-width: 1047px) {
+            .title-page{ 
+                font-size: 60px;
+            }
+        }
+        .img1{
+          width: 100%;
+        }
+        .img2{
+          width: 100%;
+
+        }
+        .content {
+          position: absolute;
+          left: 4%;
+          top: 68vh;
+          transform: translate(-50%, -50%);
+        }
+        @media only screen and (max-width: 1400px) {
+            .content {
+              top: 53vh;
+              
+            }
+        }
+        @media only screen and (max-width: 1100px) {
+            .content {
+              top: 43vh;
+              
+            }
+        }
+        .content p {
+          margin: 0 0 20px;
+        }
+
+        /* Arrow & Hover Animation */
+        #more-arrows {
+          width: 75px;
+          height: 65px;
+        }
+        #more-arrows:hover polygon {
+          fill: #000;
+          transition: all 0.2s ease-out;
+        }
+        #more-arrows:hover polygon.arrow-bottom {
+          transform: translateY(-18px);
+        }
+        #more-arrows:hover polygon.arrow-top {
+          transform: translateY(18px);
+        }
+
+        polygon {
+          fill: #000;
+          transition: all 0.2s ease-out;
+        }
+        polygon.arrow-middle {
+          opacity: 0.75;
+        }
+        polygon.arrow-top {
+          opacity: 0.5;
+        }

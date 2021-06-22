@@ -15,127 +15,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
     <script src="https://kit.fontawesome.com/158176bbc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../font/font.css">
+    <link rel="stylesheet" href="./css/main.css">
     <title>Belgindo | Contact Us</title>
-    <style>
-        body{
-            background-color: #FAF0D7;
-        }
-        footer{
-            background-color: #38352C;
-            min-height: 50vh;
-        }
-        .send-btn, .btn-belgindo{
-            background-color: #D0BE7C;
-        }
-        .send-btn img{
-            height: 30px;
-            width: 30px;
-        }
-        .navigation-menu{
-            position: absolute;
-            right: 0;
-            top: 0;
-            background-color: #D0BE7C;
-            width: max-content;
-        }
-        .title-page{
-            font-family: "LocalBrewerySans"; 
-            font-size: 90px;
-        }
-        .footer-title{
-            font-family: "LocalBrewerySans"; 
-        }
-        .footer-text{
-            font-family: "Poppins-ExtraLight";
-            font-size: 12px;
-        }
-        .footer-copyright{
-            font-family: "CaviarDreams";
-        }
-
-        .belgindo-label{
-            font-family: "Poppins-ExtraLight";
-            font-size: 15px;
-        }
-
-        @media only screen and (max-width: 1400px) {
-            .navigation-menu{
-                position: unset;
-                width: 100%;
-                right: unset;
-                top: unset;
-            }
-        }
-
-        @media only screen and (max-width: 1305px) {
-            .title-page{ 
-                font-size: 80px;
-            }
-        }
-
-        @media only screen and (max-width: 1177px) {
-            .title-page{ 
-                font-size: 70px;
-            }
-        }
-
-        @media only screen and (max-width: 1047px) {
-            .title-page{ 
-                font-size: 60px;
-            }
-        }
-        .img1{
-          width: 100%;
-        }
-        .content {
-          position: absolute;
-          left: 4%;
-          top: 68vh;
-          transform: translate(-50%, -50%);
-        }
-        @media only screen and (max-width: 1400px) {
-            .content {
-              top: 53vh;
-              
-            }
-        }
-        @media only screen and (max-width: 1100px) {
-            .content {
-              top: 43vh;
-              
-            }
-        }
-        .content p {
-          margin: 0 0 20px;
-        }
-
-        /* Arrow & Hover Animation */
-        #more-arrows {
-          width: 75px;
-          height: 65px;
-        }
-        #more-arrows:hover polygon {
-          fill: #000;
-          transition: all 0.2s ease-out;
-        }
-        #more-arrows:hover polygon.arrow-bottom {
-          transform: translateY(-18px);
-        }
-        #more-arrows:hover polygon.arrow-top {
-          transform: translateY(18px);
-        }
-
-        polygon {
-          fill: #000;
-          transition: all 0.2s ease-out;
-        }
-        polygon.arrow-middle {
-          opacity: 0.75;
-        }
-        polygon.arrow-top {
-          opacity: 0.5;
-        }
-    </style>
 </head>
 
 <body>
@@ -198,25 +79,44 @@
         </div>
       </div>
     </div>
-    <div class="container-fluid" style="margin-top: 90vh;">
+    <div class="container-fluid mb-5" style="margin-top: 60vh;">
       <div class="row">
-        <div class="col">
-
+        <div class="col-sm-12 col-md-4 col-lg-4">
+            <img src="../assets/foto/aurelien-romain-DB_q6rPFnBM-unsplash.jpg" class="img2" alt="">
         </div>
-        <div class="col">
+        <div class="col-sm-12 col-md-8 col-lg-8">
           
         </div>
       </div>
-      <div class="row">
-        <div class="col">
+      <div class="row" style="margin-top: -15vh;">
+        <div class="col-sm-12 col-md-4 col-lg-4">
 
         </div>
-        <div class="col">
-          <p class="belgindo-label">Lorem Ipsum</p>
+        <div class="col-sm-12 col-md-8 col-lg-8">
+          <p class="about-label">Lorem Ipsum</p>
+          <h1 class="mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">About Us</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, laborum asperiores corporis assumenda architecto atque beatae quisquam ullam culpa doloribus aliquid consectetur pariatur maiores neque enim facilis incidunt quaerat provident? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, minus, qui rerum alias adipisci nobis laborum nostrum necessitatibus quia consequuntur sapiente, nihil soluta. Nemo quos expedita facilis! Minima, voluptas rerum?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium dignissimos debitis tenetur id, voluptatum veniam, minus repudiandae sapiente nam obcaecati optio maxime cupiditate dolores repellendus, excepturi velit iusto porro. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque sint deserunt consequatur ipsum modi, facere fuga magni, molestias iusto praesentium delectus, cupiditate voluptate vitae itaque voluptatum perspiciatis architecto soluta cum?
+          </p>
+          <button type="button" class="btn btn-outline-dark mb-5 mt-3">More About Us</button>
         </div>
       </div>
     </div>
-    <!-- <footer class="py-4">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-3 col-lg-3">
+
+            </div>
+            <div class="col-sm-12 col-md-9 col-lg-9">
+                <p class="about-label mt-5">Lorem Ipsum</p>
+                <h1 class="title-page">Our Product</h1>
+            </div>
+        </div>
+        <div class="row">
+            
+        </div>
+    </div>
+    <footer class="py-4">
         <div class="row w-100 m-0">
             <div class="col-12 col-md-3 mb-5">
                 <div class="container">
@@ -241,6 +141,6 @@
                 </div>
             </div>
         </div>
-    </footer> -->
+    </footer>
 </body>
 </html>
