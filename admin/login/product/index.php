@@ -423,12 +423,12 @@ if (isset($_SESSION['username'])) {
         <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header" style="background-color:#D1BE7A; color:white;">
-                    <h5 class="modal-title">Add Product</h5>
+                    <h5 class="modal-title">Edit Product</h5>
                     <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close" style="color:black;">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <form method="post" enctype="multipart/form-data" id="add-product-form">
+                <form method="post" enctype="multipart/form-data" id="edit-product-form">
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="title">Category : </label>
@@ -464,7 +464,7 @@ if (isset($_SESSION['username'])) {
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" id="submit-add-button" name="submit" class="btn btn-success"><i class="lnr lnr-plus-circle"></i> Submit</button>
+                        <button type="button" id="submit-edit-button" name="submit" class="btn btn-success"><i class="lnr lnr-plus-circle"></i> Submit</button>
                     </div>
                 </form>
             </div>
@@ -561,7 +561,7 @@ if (isset($_SESSION['username'])) {
             input.value = null;
         }
 
-        // AJAX
+        // AJAX ADD
         $(document).on('click', '#submit-add-button', function(e) {
             e.preventDefault();
             $.confirm({
@@ -631,6 +631,189 @@ if (isset($_SESSION['username'])) {
                 }
             });
         });
+        var editModal = new bootstrap.Modal(document.getElementById('edit-product-modal'), {
+            keyboard: false
+        });
+        // AJAX EDIT
+        $(document).on('click', '[id="edit-product-btn"]', function() {
+            var iddb = $(this).data('id');
+            $.ajax({
+                type: "GET",
+                url: "services/fetch_product.php",
+                data: {
+                    id: iddb
+                },
+                success: function(response) {
+                    console.log(response);
+                    response = JSON.parse(response);
+                    for (const property in response) {
+                        if (property == "gambarproduk") {
+                            $('#edit-product-form #submit-edit-button').data('src', response[property]);
+                        } else {
+                            $('#edit-product-form #' + property).val(response[property]);
+                        }
+                    }
+                    $('#edit-product-form #submit-edit-button').data('id', iddb);
+                    editModal.show();
+                },
+                error: function(xhr) {
+                    $.confirm({
+                        title: 'Encountered an error!',
+                        content: 'Something went wrong while fetching the data </br> Error: "' + xhr.responseJSON.msg + '"',
+                        type: 'red',
+                        typeAnimated: true,
+                        buttons: {
+                            tryAgain: {
+                                text: 'Try again',
+                                btnClass: 'btn-red',
+                                action: function() {}
+                            },
+                            close: function() {}
+                        }
+                    });
+                }
+            });
+        });
+
+        // SUBMIT EDIT BUTTON
+        $(document).on('click', '#submit-edit-button', function(e) {
+            var iddb = $(this).data('id');
+            var srcimg = $(this).data('src');
+            e.preventDefault();
+            $.confirm({
+                title: 'Are you sure?',
+                content: 'Your data will be changed',
+                buttons: {
+                    confirm: {
+                        text: 'Confirm',
+                        btnClass: 'btn-success',
+                        keys: ['enter', 'shift'],
+                        action: function() {
+                            var Formhtml = document.getElementById("edit-product-form");
+                            var Formobj = new FormData(Formhtml);
+                            Formobj.append('id', iddb);
+                            if (productblobdata) {
+                                Formobj.append('file', productblobdata, "image");
+                            }
+                            Formobj.append('srcimg', srcimg);
+                            $.ajax({
+                                type: "POST",
+                                url: "services/edit_product.php",
+                                cache: false,
+                                contentType: false,
+                                processData: false,
+                                data: Formobj,
+                                success: function(data) {
+                                    $("#list-product").html(data);
+                                    editModal.hide();
+                                    $('#edit-product-form')[0].reset();
+                                    productblobdata = null;
+                                    $('#gambarproduct').next('.custom-file-label').html("Choose File");
+                                },
+                                error: function(xhr) {
+                                    editModal.hide();
+                                    $.confirm({
+                                        title: 'Encountered an error!',
+                                        content: 'Something went wrong while changing the data </br> Error: "' + xhr.responseJSON.msg + '"',
+                                        type: 'red',
+                                        typeAnimated: true,
+                                        buttons: {
+                                            tryAgain: {
+                                                text: 'Try again',
+                                                btnClass: 'btn-red',
+                                                action: function() {
+                                                    $('#edit-product-form')[0].reset();
+                                                }
+                                            },
+                                            close: function() {
+                                                $('#edit-product-form')[0].reset();
+                                            }
+                                        }
+                                    });
+                                }
+                            });
+                        }
+                    },
+                    cancel: {
+                        text: 'Cancel',
+                        btnClass: 'btn-secondary',
+                        keys: ['enter', 'shift'],
+                        action: function() {}
+                    }
+                }
+            });
+        });
+
+        // DELETE
+        $(document).on('click', '[id="delete-product-btn"]', function() {
+        var iddb = $(this).data('id');
+        $.confirm({
+            title: 'Are You Sure?',
+            content: 'You won\'t be able to revert this',
+            buttons: {
+                confirm: function() {
+                    var jc = $.dialog({
+                        title: '',
+                        content: '',
+                        closeIcon: false,
+                        onOpenBefore: function() {
+                            this.showLoading(true);
+                        }
+                    });
+                    setTimeout(function() {
+                        $.ajax({
+                            type: "POST",
+                            url: "services/delete_product.php",
+                            data: {
+                                id: iddb
+                            },
+                            async: false,
+                            beforeSend: function() {
+                                jc.showLoading(true);
+                            },
+                            complete: function() {
+                                jc.close();
+                            },
+                            success: function(response) {
+                                $.confirm({
+                                    title: 'Success!',
+                                    content: 'Your data has been deleted',
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        OK: {
+                                            text: 'OK',
+                                            btnClass: 'btn-green',
+                                            action: function() {}
+                                        },
+                                        close: function() {}
+                                    }
+                                });
+                                $('#list-product').html(response);
+                            },
+                            error: function(xhr, status, error) {
+                                $.confirm({
+                                    title: 'Encountered an error!',
+                                    content: 'Something went wrong while deleting your data <br> Error: "' + xhr.responseJSON.message + '"',
+                                    type: 'red',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        tryAgain: {
+                                            text: 'Try again',
+                                            btnClass: 'btn-red',
+                                            action: function() {}
+                                        },
+                                        close: function() {}
+                                    }
+                                });
+                            }
+                        });
+                    }, 1000);
+                },
+                cancel: function() {}
+            }
+        });
+    });
 
         $(document).on("click", "[id='preview-image']", function() {
             var imgsrc = $(this).data('src');

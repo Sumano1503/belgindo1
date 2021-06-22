@@ -5,10 +5,10 @@ session_start();
 function uploadProduct()
 {
     global $error_check;
-    $fileName = $_FILES['image']['name'];
-    $fileSize = $_FILES['image']['size'];
-    $fileError = $_FILES['image']['error'];
-    $tmpFileName = $_FILES['image']['tmp_name'];
+    $fileName = $_FILES['file']['name'];
+    $fileSize = $_FILES['file']['size'];
+    $fileError = $_FILES['file']['error'];
+    $tmpFileName = $_FILES['file']['tmp_name'];
     if ($fileError === 4) {
         $error_check = "4";
         return false;
@@ -24,6 +24,7 @@ function uploadProduct()
         $error_check = "6";
         return false;
     }
+    unlink($_SERVER['DOCUMENT_ROOT'] . '/belgindo1/ourwork/product/' . $_POST['srcimg']);
     $newFileName = uniqid();
     $newFileName .= '.';
     $newFileName .= $fileExtension;
@@ -31,16 +32,24 @@ function uploadProduct()
     move_uploaded_file($tmpFileName, $location);
     return $newFileName;
 }
-
-if (isset($_SESSION['id']) && $_SERVER["REQUEST_METHOD"]=="POST"){
+if (isset($_SESSION['id']) && $_SERVER['REQUEST_METHOD'] == "POST") {
+    $id = $_POST['id'];
+    $gambarproduct;
+    if ($_FILES['file']['error'] === 4) {
+        $gambarproduct = $_POST['srcimg'];
+    } else {
+        $gambarproduct = uploadProduct();
+    }
     $kategori = $_POST["kategori"];
-    $gambarproduct = uploadProduct();
     $nama = $_POST["nama"];
     $deskripsi = $_POST["deskripsi"];
-
-    $query="INSERT INTO `produk_belgindo`(`id`, `kategori_produk`, `nama_produk`, `foto_produk`, `deskripsi_produk`, `status`) VALUES (default,?,?,?,?,1)";
-    $stmt=$pdo->prepare($query);
-    $stmt->execute([$kategori,$nama,$gambarproduct,$deskripsi]);
-    echo show_product($pdo);
+    $sql = "UPDATE `produk_belgindo` SET `kategori_produk` = ?, `nama_produk` = ?, `foto_produk` = ?, `deskripsi_produk` = ? WHERE `id` = ?";
+    $stmt = $pdo->prepare($sql);
+    if ($stmt->execute([$kategori, $nama, $gambarproduct, $deskripsi, $id])) {
+        echo show_product($pdo);
+    } else {
+        echo json_response(400, "Internal Server Error");
+    }
+} else {
+    header("HTTP/1.0 404 Not Found");
 }
-?>
