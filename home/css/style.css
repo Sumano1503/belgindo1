@@ -1,0 +1,131 @@
+
+/* CSS Document */
+ul{
+	list-style:none;
+}
+a{
+	text-decoration:none;
+}
+.content{
+	/* display:flex; */
+	/* justify-content: center; */
+	/* align-items: center; */
+	margin-left: 45vw;
+	margin-top:160vh;
+}
+@media only screen and (max-width: 1885px){
+	.content{
+		margin-top:175vh;
+	}
+	@media only screen and (max-height: 350px){
+		.content{
+			margin-top:190vh;
+		}
+	}
+}
+@media only screen and (max-width: 1430px){
+	.content{
+		margin-top:170vh;
+	}
+}
+@media only screen and (max-width: 1328px){
+	.content{
+		margin-top:165vh;
+	}
+}
+@media only screen and (max-width: 1285px){
+	.content{
+		margin-top:160vh;
+	}
+}
+@media only screen and (max-width: 1195px){
+	.content{
+		margin-top:155vh;
+	}
+}
+@media only screen and (max-width: 995px){
+	.content{
+		margin-top:193vh;
+	}
+}
+@media only screen and (max-width: 770px){
+	.content{
+		margin-top:180vh;
+	}
+}
+@media only screen and (max-width: 375px){
+	.content{
+		margin-top:190vh;
+	}
+}
+@media only screen and (max-width: 340px){
+	.content{
+		margin-top:210vh;
+	}
+}
+.box{
+	width:350px;
+	height:610px;
+	background-color:#1e1e26;
+	border-radius: 10px;
+	box-shadow: 2px 10px 12px rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	box-sizing: border-box;
+	margin: 20px 10px;
+}
+.model{
+	height: 350px;
+	max-height: 100%;
+	max-width: 100%;
+}
+.details{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 300px;
+}
+.details p{
+	font-family: calibri;
+	font-weight: bold;
+	color:#6a6a74;
+	text-align: center;
+	margin-top: 20px;
+}
+.marvel{
+	color:#32323e;
+	font-weight: bold;
+	letter-spacing: 2px;
+	font-family: bebas kai;
+	font-size: 25px;
+}
+.logo{
+	height: 60px;
+}
+.box:hover{
+	background-color: #17171d;
+	transform-style: preserve-3d;
+	transform: scale(1.02);
+	transition: all ease 0.3s;
+}
+.box:hover .marvel{
+	color:#c0292b;
+	transition: all ease 0.5s;
+}
+/*--responsive for mobile phone--*/
+@media(max-width:720px){
+	.box{
+		width: 94%;
+		height: 500px;
+	}
+	.model{
+		height:250px;
+	}
+	.details p{
+		font-size: 16px;
+		width: 250px;
+	}
+	
+}

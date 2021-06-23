@@ -16,107 +16,214 @@
     <script src="https://kit.fontawesome.com/158176bbc5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../font/font.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/lightslider.css">
+    <script src="./js/lightslider.js"></script>
+    <script src="./js/script.js"></script>
     <title>Belgindo | Contact Us</title>
+    <style>
+        .mgtp{
+            margin-top: 60vh;
+        }
+        @media only screen and (max-width: 1400px) {
+            .mgtp{
+                margin-top: 12vh;
+            }
+        }
+        @media only screen and (max-width: 985px) {
+            .mgtp{
+                margin-top: 15vh;
+            }
+        }
+    </style>
 </head>
-
 <body>
-    <div class="container-fluid p-0 p-sm-auto" id="main">
-      <div class="row w-100 m-0">
-        <div class="col-12 col-lg-6 order-3 order-lg-1">
-          <div class="container pt-4 pt-lg-5">
-            <h1 class="mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">About Us</h1>
-            <p class="belgindo-label">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quibusdam distinctio repudiandae rem velit, sunt tempore totam nihil, aut, ipsum nostrum iusto! Optio accusamus non eaque quam unde ducimus officiis.</p>
-            <div class="content d-none d-lg-block d-sm-none ">
-              <svg id="more-arrows">
-                <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
-                <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
-                <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
-              </svg>
+    <section>
+        <div class="container-fluid p-0 p-sm-auto" id="main">
+            <div class="row w-100 m-0">
+              <div class="col-12 col-lg-6 order-3 order-lg-1">
+                <div class="container pt-4 pt-lg-5">
+                  <h1 class="mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">About Us</h1>
+                  <p class="belgindo-label">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Possimus quibusdam distinctio repudiandae rem velit, sunt tempore totam nihil, aut, ipsum nostrum iusto! Optio accusamus non eaque quam unde ducimus officiis.</p>
+                  <div class="content d-none d-lg-block d-sm-none ">
+                    <svg id="more-arrows">
+                      <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+                      <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+                      <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-lg-6 ps-0 ps-lg-auto pe-0 order-1 order-lg-2 ms-auto position-relative">
+                  <div class="navigation-menu w-100">
+                      <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none" style="background-color: #D0BE7C;">
+                          <div class="container-fluid justify-content-end">
+                              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                                  aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                  <span class="navbar-toggler-icon"></span>
+                              </button>
+                              <div class="collapse navbar-collapse " style="width: 100%;" id="navbarNav">
+                                  <ul class="navbar-nav">
+                                      <li class="nav-item my-4">
+                                          <a class="nav-link active" aria-current="page" href="#">Home</a>
+                                      </li>
+                                      <li class="nav-item my-4">
+                                          <a class="nav-link" href="#">About Us</a>
+                                      </li>
+                                      <li class="nav-item my-4">
+                                          <a class="nav-link" href="#">Gallery</a>
+                                      </li>
+                                      <li class="nav-item my-4">
+                                          <a class="nav-link" href="#">Contact Us</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </nav>
+                      <div class="d-none d-lg-flex flex-row flex-nowrap align-items-center py-4 pe-3 justify-content-center w-100">
+                          <div class="text-white mx-3 mx-sm-4 mx-md-4 mx-xxl-5">Home</div>
+                          <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">About Us</div>
+                          <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Gallery</div>
+                          <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Contact Us</div>
+                      </div>
+                      <div style="width: 100%" class="d-none d-lg-block">
+                          <img src="/assets/foto/ant-rozetsky-SLIFI67jv5k-unsplash.jpg" class="img1" alt="">
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 d-block d-lg-none order-2 p-0">
+                  <div style="width: 100%">
+                    <img src="/assets/foto/ant-rozetsky-SLIFI67jv5k-unsplash.jpg" class="img1" alt="">
+                  </div>
+              </div>
             </div>
-          </div>
         </div>
-        <div class="col-6 col-lg-6 ps-0 ps-lg-auto pe-0 order-1 order-lg-2 ms-auto position-relative">
-            <div class="navigation-menu w-100">
-                <nav class="navbar navbar-expand-lg navbar-light p-4 d-block d-lg-none" style="background-color: #D0BE7C;">
-                    <div class="container-fluid justify-content-end">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse " style="width: 100%;" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item my-4">
-                                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                                </li>
-                                <li class="nav-item my-4">
-                                    <a class="nav-link" href="#">About Us</a>
-                                </li>
-                                <li class="nav-item my-4">
-                                    <a class="nav-link" href="#">Gallery</a>
-                                </li>
-                                <li class="nav-item my-4">
-                                    <a class="nav-link" href="#">Contact Us</a>
-                                </li>
-                            </ul>
+    </section>
+    <section>
+        <div class="container-fluid mb-5 mgtp">
+            <div class="row">
+              <div class="col-sm-12 col-md-4 col-lg-4 d-none d-lg-block">
+                  <img src="../assets/foto/aurelien-romain-DB_q6rPFnBM-unsplash.jpg" class="img2" alt="">
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-8">
+                
+              </div>
+            </div>
+            <div class="row" style="margin-top: -15vh;">
+              <div class="col-sm-12 col-md-4 col-lg-4 d-none d-lg-block">
+                  
+              </div>
+              <div class="col-sm-12 col-md-8 col-lg-8">
+                <p class="about-label">Lorem Ipsum</p>
+                <h1 class="mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">About Us</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, laborum asperiores corporis assumenda architecto atque beatae quisquam ullam culpa doloribus aliquid consectetur pariatur maiores neque enim facilis incidunt quaerat provident? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, minus, qui rerum alias adipisci nobis laborum nostrum necessitatibus quia consequuntur sapiente, nihil soluta. Nemo quos expedita facilis! Minima, voluptas rerum?
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium dignissimos debitis tenetur id, voluptatum veniam, minus repudiandae sapiente nam obcaecati optio maxime cupiditate dolores repellendus, excepturi velit iusto porro. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque sint deserunt consequatur ipsum modi, facere fuga magni, molestias iusto praesentium delectus, cupiditate voluptate vitae itaque voluptatum perspiciatis architecto soluta cum?
+                </p>
+                <button type="button" class="btn btn-outline-dark mb-5 mt-3">More About Us</button>
+              </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 col-lg-3">
+    
+                </div>
+                <div class="col-sm-12 col-md-9 col-lg-9">
+                    <p class="about-label mt-5">Lorem Ipsum</p>
+                    <h1 class="title-page">Our Product</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="content">
+            <ul id="autoWidth" class="cs-hidden">
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
                         </div>
                     </div>
-                </nav>
-                <div class="d-none d-lg-flex flex-row flex-nowrap align-items-center py-4 pe-3 justify-content-center w-100">
-                    <div class="text-white mx-3 mx-sm-4 mx-md-4 mx-xxl-5">Home</div>
-                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">About Us</div>
-                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Gallery</div>
-                    <div class="text-white me-3 ms-2 me-sm-4 ms-sm-3 mx-md-4 mx-xxl-5">Contact Us</div>
-                </div>
-                <div style="width: 100%" class="d-none d-lg-block">
-                    <img src="/assets/foto/ant-rozetsky-SLIFI67jv5k-unsplash.jpg" class="img1" alt="">
-                </div>
-            </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+                <li class="item-a">
+                    <div class="box">
+                        <p class="marvel">Produk A</p>
+                        <img src="img/SpiderMan.png" class="model">
+                        <div class="details">
+                            <img src="img/SpiderMan-logo.png" class="logo" >
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, ullam est. Odit nihil nam officia voluptatibus porro ullam similique consequuntur nulla cum dolores ut, officiis, cupiditate sit expedita totam</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="col-12 d-block d-lg-none order-2 p-0">
-            <div style="width: 100%">
-              <img src="/assets/foto/ant-rozetsky-SLIFI67jv5k-unsplash.jpg" class="img1" alt="">
-            </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid mb-5" style="margin-top: 60vh;">
-      <div class="row">
-        <div class="col-sm-12 col-md-4 col-lg-4">
-            <img src="../assets/foto/aurelien-romain-DB_q6rPFnBM-unsplash.jpg" class="img2" alt="">
-        </div>
-        <div class="col-sm-12 col-md-8 col-lg-8">
-          
-        </div>
-      </div>
-      <div class="row" style="margin-top: -15vh;">
-        <div class="col-sm-12 col-md-4 col-lg-4">
-
-        </div>
-        <div class="col-sm-12 col-md-8 col-lg-8">
-          <p class="about-label">Lorem Ipsum</p>
-          <h1 class="mt-0 mt-lg-4 mb-4 mb-lg-0 title-page">About Us</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, laborum asperiores corporis assumenda architecto atque beatae quisquam ullam culpa doloribus aliquid consectetur pariatur maiores neque enim facilis incidunt quaerat provident? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus, minus, qui rerum alias adipisci nobis laborum nostrum necessitatibus quia consequuntur sapiente, nihil soluta. Nemo quos expedita facilis! Minima, voluptas rerum?
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis laudantium dignissimos debitis tenetur id, voluptatum veniam, minus repudiandae sapiente nam obcaecati optio maxime cupiditate dolores repellendus, excepturi velit iusto porro. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque sint deserunt consequatur ipsum modi, facere fuga magni, molestias iusto praesentium delectus, cupiditate voluptate vitae itaque voluptatum perspiciatis architecto soluta cum?
-          </p>
-          <button type="button" class="btn btn-outline-dark mb-5 mt-3">More About Us</button>
-        </div>
-      </div>
-    </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm-12 col-md-3 col-lg-3">
-
-            </div>
-            <div class="col-sm-12 col-md-9 col-lg-9">
-                <p class="about-label mt-5">Lorem Ipsum</p>
-                <h1 class="title-page">Our Product</h1>
-            </div>
-        </div>
-        <div class="row">
-            
-        </div>
-    </div>
-    <footer class="py-4">
+    </section>
+    <footer class="py-4" style="margin-top: 80vh;">
         <div class="row w-100 m-0">
             <div class="col-12 col-md-3 mb-5">
                 <div class="container">
