@@ -64,7 +64,7 @@
             <div class="widget-content p-0">
                 <div class="widget-content-wrapper">
                     <div class="widget-content-right ml-3">
-                        <a href="https://www.incendio.id/admin/services/logout.php" class="btn-shadow p-2 btn btn-sm" title="Logout" id="logout" style="background-color:white; color:black;">
+                        <a href="https://www.belgindorayaindonesia.com/admin/services/logout.php" class="btn-shadow p-2 btn btn-sm" title="Logout" id="logout" style="background-color:white; color:black;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-closed" viewBox="0 0 16 16">
                                 <path d="M3 2a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2zm1 13h8V2H4v13z"/>
                                 <path d="M9 9a1 1 0 1 0 2 0 1 1 0 0 0-2 0z"/>
